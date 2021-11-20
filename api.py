@@ -9,12 +9,19 @@ CORS(app)
 
 class LanguageCode(Resource):
   def get(self, language):
-    print("Request for language: " + language)
-    object = scraping.getLanguageCode(language)
-    return object['code']
+    print("Request for code: " + language)
+    code = scraping.getLanguageCode(language)
+    return code
+
+class LanguageFromCode(Resource):
+  def get(self, code):
+    print("Request for language:" + code)
+    language = scraping.getLanguageFromCode(code)
+    return language
   
 api.add_resource(LanguageCode, '/','/language/<string:language>')
-  
+api.add_resource(LanguageFromCode, '/', '/code/<string:code>')
+
 if __name__ == '__main__':
   print("Starting the language code API")
   app.run()

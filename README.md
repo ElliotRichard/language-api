@@ -16,7 +16,7 @@ Hosted with CI/CD: https://language-iso-code-api.herokuapp.com
 
 # Usage
 
-Right now only one parameter type is available.
+## Language->Code
 
 ```HTML
 https://language-iso-code-api.herokuapp.com/language/<language>
@@ -32,4 +32,22 @@ which would then return
 
 ```JSON
 "EN"
+```
+
+## Code->Language
+
+```HTML
+https://language-iso-code-api.herokuapp.com/code/<code>
+```
+
+Example for English you would use
+
+```HTML
+https://language-iso-code-api.herokuapp.com/code/EN
+```
+
+which would then return
+
+```JSON
+"English"
 ```
